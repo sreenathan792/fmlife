@@ -31,8 +31,8 @@ public class ConnetionTest extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// setup connection variables
-			String user = "root";
-			String pass = "mjolnir";
+			String user = "fmuser";
+			String pass = "fmpassword";
 			
 			String jdbcUrl = "jdbc:mysql://localhost:3306/fm_life?useSSL=false";
 			String driver = "com.mysql.cj.jdbc.Driver";
