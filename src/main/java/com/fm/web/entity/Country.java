@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Country {
 	
 	@Column(name="continental_federation")
 	private String continentalFederation;
+	
+	@OneToOne
+	@JoinColumn(name = "national_team_id")
+	private Team nationalTeamId;
 
 	public int getId() {
 		return id;
@@ -55,6 +61,14 @@ public class Country {
 
 	public void setContinentalFederation(String continentalFederation) {
 		this.continentalFederation = continentalFederation;
+	}
+
+	public Team getNationalTeamId() {
+		return nationalTeamId;
+	}
+
+	public void setNationalTeamId(Team nationalTeamId) {
+		this.nationalTeamId = nationalTeamId;
 	}
 
 }

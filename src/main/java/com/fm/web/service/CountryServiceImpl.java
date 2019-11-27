@@ -22,5 +22,11 @@ public class CountryServiceImpl implements CountryService {
 		return countryDao.getCountries();
 	}
 
+	@Override
+	@Transactional()
+	public void addNewCountry(Country country) {
+		countryDao.saveCountry(country);
+	}
+
 
 }

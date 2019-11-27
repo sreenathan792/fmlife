@@ -18,10 +18,21 @@ public class CountryDaoImpl implements CountryDao {
 
 	@Override
 	public List<Country> getCountries() {
+		
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query<Country> theQuery = currentSession.createQuery("from Country order by countryName", Country.class);
 		List<Country> countryList = theQuery.getResultList();
 		return countryList;
+	
+	}
+
+	@Override
+	public void saveCountry(Country country) {
+
+		Session session = sessionFactory.openSession();
+		session.save(country);
+		session.close();
+		
 	}
 	
 }

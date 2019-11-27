@@ -7,5 +7,7 @@ import com.fm.web.entity.Country;
 public interface CountryDao {
 
 	public List<Country> getCountries();
+
+	public void saveCountry(Country country);
 	
 }
