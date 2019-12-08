@@ -1,8 +1,8 @@
 package design.pattern.strategy;
 
 /**
- * Strategy Pattern - A Behavioural Design Pattern
- * The Strategy Pattern defines a family of algorithms (weapon behaviours here), 
+ * Strategy Pattern - A Behavioral Design Pattern
+ * The Strategy Pattern defines a family of algorithms (weapon behaviors here), 
  * encapsulates each one, and makes them interchangeable.
  * Strategy lets the algorithm vary independently from clients that use it.
  * */

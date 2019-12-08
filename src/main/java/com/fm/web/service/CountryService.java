@@ -9,5 +9,9 @@ public interface CountryService {
 	public List<Country> getCountryService();
 
 	public void addNewCountry(Country country);
+
+	public Country fetchCountry(int id);
+
+	public void updateCountry(Country country);
 	
 }

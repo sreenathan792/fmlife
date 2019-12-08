@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fm.web.entity.Country;
@@ -45,6 +47,23 @@ public class CountryController {
 		
 		countryService.addNewCountry(country);
 		 
+		return "redirect:list";
+	}
+	
+	@GetMapping(value = "/edit/{id}")
+	public String editCountry(@PathVariable int id, Model model) {
+		
+		Country country = countryService.fetchCountry(id);
+		model.addAttribute("country", country);
+		
+		return "edit-country";
+	}
+	
+	@PutMapping(value = "/edit/update")
+	public String updateCountry(@ModelAttribute Country country) {
+		
+		countryService.updateCountry(country);
+
 		return "redirect:list";
 	}
 

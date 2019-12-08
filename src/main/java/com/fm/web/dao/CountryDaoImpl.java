@@ -34,5 +34,23 @@ public class CountryDaoImpl implements CountryDao {
 		session.close();
 		
 	}
+
+	@Override
+	public Country fetchCountry(int id) {
+
+		Session session = sessionFactory.openSession();
+		Country country = session.get(Country.class, id);
+		return country;
+		
+	}
+
+	@Override
+	public void updateCountry(Country country) {
+		
+		Session session = sessionFactory.openSession();
+		session.update(country);
+		session.close();
+		
+	}
 	
 }

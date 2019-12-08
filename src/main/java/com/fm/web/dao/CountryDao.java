@@ -9,5 +9,9 @@ public interface CountryDao {
 	public List<Country> getCountries();
 
 	public void saveCountry(Country country);
+
+	public Country fetchCountry(int id);
+
+	public void updateCountry(Country country);
 	
 }
