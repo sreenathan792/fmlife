@@ -29,16 +29,15 @@ public class CountryDaoImpl implements CountryDao {
 	@Override
 	public void saveCountry(Country country) {
 
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		session.save(country);
-		session.close();
 		
 	}
 
 	@Override
 	public Country fetchCountry(int id) {
 
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		Country country = session.get(Country.class, id);
 		return country;
 		
@@ -47,10 +46,18 @@ public class CountryDaoImpl implements CountryDao {
 	@Override
 	public void updateCountry(Country country) {
 		
-		Session session = sessionFactory.openSession();
-		session.update(country);
-		session.close();
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(country);
 		
+	}
+
+	@Override
+	public void deleteCountry(int id) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		Query theQuery = session.createQuery("delete from Country where id = :theId").setParameter("theId", id);
+		theQuery.executeUpdate();
+	
 	}
 	
 }
