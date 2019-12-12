@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h1>Update Country</h1>
-		<sf:form action="update" modelAttribute="country" method="PUT">
+		<sf:form action="update" modelAttribute="country" method="POST">
 			<div class="form-row">
 				<div class="form-group col-md-6">
 				    <label for="countryName">Country Name</label>

@@ -15,6 +15,10 @@
 		function editCountry(ab) {
 			window.location.href = "../country/edit/"+ab;
 		}
+		
+		function deleteCountry(ab) {
+			window.location.href = "../country/delete/"+ab;
+		}
 	
 	</script>	
 	<meta charset="ISO-8859-1">
@@ -39,7 +43,10 @@
 				<td>${tempCountries.countryName}</td>
 				<td>${tempCountries.federation}</td>
 				<td>${tempCountries.continentalFederation}</td>
-				<td><button type="button" class="btn btn-outline-warning" onclick="javascript:editCountry(${tempCountries.id})">Edit</button></td>	
+				<td>
+					<button type="button" class="btn btn-outline-warning" onclick="javascript:editCountry(${tempCountries.id})">Edit</button>
+					<button type="button" class="btn btn-outline-danger" onclick="javascript:deleteCountry(${tempCountries.id})">Delete</button>
+				</td>	
 			</tr>
 		</c:forEach>
 	</table>

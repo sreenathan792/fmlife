@@ -13,5 +13,7 @@ public interface CountryService {
 	public Country fetchCountry(int id);
 
 	public void updateCountry(Country country);
+
+	public void deleteCountry(int id);
 	
 }

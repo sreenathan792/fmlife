@@ -32,8 +32,8 @@
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/fm_life?useSSL=false" />
-        <property name="user" value="root" />
-        <property name="password" value="medteam2013" /> 
+        <property name="user" value="fmuser" />
+        <property name="password" value="fmuser" /> 
 
         <!-- these are connection pool properties for C3P0 -->
 		<property name="initialPoolSize" value="5"/>
@@ -51,6 +51,7 @@
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 		      <prop key="hibernate.show_sql">true</prop>
+		      <prop key="hibernate.format_sql">true</prop>
 		   </props>
 		</property>
    </bean>	  
